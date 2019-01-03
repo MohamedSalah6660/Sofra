@@ -7,10 +7,61 @@ Change Password
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<h1>Change PAssword</h1>
+
+ @if ($message = Session::get('success'))
+
+    <div class="alert alert-success">
+
+        <p>{{ $message }}</p>
+
+    </div>
+
+@endif
+        
+ @if ($message = Session::get('failed'))
+
+    <div class="alert alert-danger">
+
+        <p>{{ $message }}</p>
+
+    </div>
+
+@endif
+
+<h1>Change Password</h1>
+
+                                                
+    @if (count($errors) > 0)
+
+    <div class="alert alert-danger">
+
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+
+        <ul>
+
+            @foreach ($errors->all() as $error)
+
+                <li>{{ $error }}</li>
+
+            @endforeach
+
+        </ul>
+
+    </div>
+
+@endif
 
 
-<form  method="post" action="#">
+
+
+
+
+
+
+
+   
+
+    {!! Form::open(['url'=> 'changePassword','method'=>'POST'])!!}
 
 
 <div class="container">
@@ -19,7 +70,7 @@ Change Password
             
             <label>Current Password</label>
             <div class="form-group pass_show"> 
-                <input name="passwordold" type="password" class="form-control" placeholder="Current Password"> 
+                <input name="old-password" type="password" class="form-control" placeholder="Current Password"> 
             </div> 
 
 
@@ -34,11 +85,11 @@ Change Password
                 <input name="password_confirmation" type="password"  class="form-control" placeholder="Confirm Password"> 
             </div> 
             
-            <button type="submit" class="btn btn-primary">Change PAssword</button>
+            <button type="submit" class="btn btn-primary">Change Password</button>
         </div>  
     </div>
 </div>
-</form>
+    {!! Form::close()!!}
 
 <style type="text/css">
     .pass_show{position: relative} 

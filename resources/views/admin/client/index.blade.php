@@ -63,14 +63,14 @@ Clients Control
         <td>{{ $client->quarter }}</td>
 
         <td>
-<a class="btn btn-danger" href="#">
-   Delete</a>
-   
+
 
     {!! Form::open(['method' => 'DELETE','url' => 'clients/'. $client->id,'style'=>'display:inline', ('onclick="return myFunction();"')]) !!}
 
-       {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-      
+
+        <button type="submit" class="btn btn-danger">
+          <i class="fa fa-trash-o"></i>
+          </button>      
       {!! Form::close() !!}
 
         </td>

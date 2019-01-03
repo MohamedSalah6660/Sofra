@@ -25,9 +25,9 @@ class OrderController extends Controller
 
     public function show($id)
     {
-
+        
         $orders = Order::findOrFail($id);
-
+        
 
         $order_product = $orders->products->all();
             

@@ -49,6 +49,8 @@ Route::group(['namespace'=> 'Admin'] , function(){
 
 	Route::get('changePassword','AuthController@ChangePassword');
 
+	Route::post('changePassword','AuthController@changePasswordSave')->name('changePasswordUser');
+
 
 
 });

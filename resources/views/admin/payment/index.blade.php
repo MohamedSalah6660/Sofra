@@ -72,8 +72,10 @@ Payment Control
 
     {!! Form::open(['method' => 'DELETE','url' => 'payments/'. $payment->id,'style'=>'display:inline', ('onclick="return myFunction();"')]) !!}
 
-       {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-      
+        <button type="submit" class="btn btn-danger">
+          <i class="fa fa-trash-o"></i>
+          </button>
+
       {!! Form::close() !!}
 
         </td>
